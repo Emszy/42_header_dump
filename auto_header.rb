@@ -1,4 +1,4 @@
-dir = "/nfs/2016/e/ebucheit/Desktop/fractol"
+dir = "/nfs/2016/e/ebucheit/Desktop/wolf3d"
 new_dir = ""
 
 
@@ -40,7 +40,7 @@ def fix_line_8(line8, item)
 
 
   my_name = "ebucheit"
-  date = Time.now.strftime("%m/%d/%Y %H:%M")
+    date = Time.now.strftime("%Y/%m/%d %H:%M:%S")
   created       = "Created: #{date} by #{my_name}"
   i = 0
   if line8.length() != 80
@@ -57,7 +57,7 @@ end
 
 def fix_line_9(line9, item)
   my_name = "ebucheit"
-  date = Time.now.strftime("%m/%d/%Y %H:%M")
+    date = Time.now.strftime("%Y/%m/%d %H:%M:%S")
   updated       = "Updated: #{date} by #{my_name}"
   i = 0
   if line9.length() != 80
@@ -79,7 +79,7 @@ def search_directory(dir)
 file_lines    = ""
 
 my_name = "ebucheit"
-date = Time.now.strftime("%m/%d/%Y %H:%M")
+date = Time.now.strftime("%Y/%m/%d %H:%M:%s")
 by            = "By: #{my_name} <marvin@42.fr>"
 created       = "Created: #{date} by #{my_name}"
 updated       = "Updated: #{date} by #{my_name}"
@@ -105,13 +105,13 @@ updated       = "Updated: #{date} by #{my_name}"
           line10  = "/*                                                                            */"
           line11  = "/* ************************************************************************** */"
 
-  		if File.directory?(new_dir) == true and !item.include? "libft" and !item.include? "minilibx_macos" and !item.include? ".git"
-  			search_directory(new_dir)
-  		end
+  		# if File.directory?(new_dir) == true and !item.include? "libft" and !item.include? "minilibx_macos" and !item.include? ".git"
+  		# 	search_directory(new_dir)
+  		# end
     needs_nl = false
       x = 0;
     file_lines = ""
- 		if item.include? ".c"
+ 		if item.include? ".c" or item.include? ".h"
   			File.open(dir + "/" + item, "r") do |f|
   			 f.each_line do |line|
           if line.include? "****"
