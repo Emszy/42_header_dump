@@ -1,4 +1,4 @@
-dir = "/nfs/2016/e/ebucheit/Desktop/42_header/tests"
+dir = "/nfs/2016/e/ebucheit/Desktop/filler"
 my_name = "ebucheit"
 new_dir = ""
 
@@ -64,7 +64,7 @@ line = []
  		new_dir = dir + "/" + item
     line = init_lines(line, item, my_name)
   		if File.directory?(new_dir) == true and !item.include? "libft" and !item.include? "minilibx_macos" and !item.include? ".git"
-  			search_directory(new_dir)
+  			search_directory(new_dir, my_name)
   		end
       needs_nl, file_lines = get_file_lines(item, dir)
       put_header(item, skip_file, line, dir, needs_nl, file_lines)
